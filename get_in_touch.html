@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in Touch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #4CAF50;
+        }
+
+        .social-media {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .social-media a:hover {
+            color: #4CAF50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea, button {
+            font-size: 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2rem;
+            background: #4CAF50;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .success-popup.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <div class="social-media">
+            <a href="mailto:lexa9448@gmail.com" title="Email">
+                📧
+            </a>
+            <a href="https://www.linkedin.com/in/alex-njiru" title="LinkedIn">
+                🔗
+            </a>
+        </div>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <div class="success-popup" id="success-popup">
+        Thank you! Your message has been sent.
+    </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const successPopup = document.getElementById('success-popup');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create a mailto link
+            const mailtoLink = `mailto:lexa9448@gmail.com?subject=Message%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
+            
+            // Open the mailto link
+            window.location.href = mailtoLink;
+
+            // Show success popup
+            successPopup.classList.add('show');
+            setTimeout(() => successPopup.classList.remove('show'), 3000);
+
+            // Reset form fields
+            form.reset();
+        });
+    </script>
+</body>
+</html>
