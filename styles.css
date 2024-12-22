@@ -111,6 +111,73 @@ h1 {
     color: #4CAF50;
 }
 
+.social-media {
+     text-align: center;
+     margin-bottom: 2rem;
+}
+
+ .social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+ .social-media a:hover {
+    color: #4CAF50;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+input, textarea, button {
+     font-size: 1rem;
+     padding: 0.8rem;
+     border: none;
+     border-radius: 5px;
+     width: 100%;
+     box-sizing: border-box;
+  }
+
+ input, textarea {
+     background: #333;
+     color: white;
+  }
+
+button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2rem;
+            background: #4CAF50;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .success-popup.show {
+            display: block;
+        }
+
 /* List Styles */
 ul {
     list-style: none;
