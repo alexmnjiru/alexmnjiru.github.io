@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get in Touch</title>
+    <title>Get in Touch - Alex Njiru</title>
     <style>
         body {
+            background: black;
+            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+        }
+
+        .back-btn {
+            background: #333;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .back-btn a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .back-btn a:hover {
+            color: #4CAF50;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 2rem auto;
             padding: 2rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #222;
+            border-radius: 10px;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 2rem;
             color: #4CAF50;
         }
 
@@ -37,7 +68,7 @@
             margin: 0 10px;
             text-decoration: none;
             font-size: 1.5rem;
-            color: #333;
+            color: white;
         }
 
         .social-media a:hover {
@@ -53,18 +84,22 @@
         input, textarea, button {
             font-size: 1rem;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: none;
             border-radius: 5px;
             width: 100%;
             box-sizing: border-box;
         }
 
+        input, textarea {
+            background: #333;
+            color: white;
+        }
+
         button {
             background-color: #4CAF50;
             color: white;
-            cursor: pointer;
             font-weight: bold;
-            border: none;
+            cursor: pointer;
         }
 
         button:hover {
@@ -93,16 +128,25 @@
     </style>
 </head>
 <body>
+    <div class="back-btn">
+        <a href="index.html">&larr; Back</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="qualifications.html">Qualifications</a>
+        <a href="get-in-touch.html">Get in Touch</a>
+    </nav>
+
     <div class="container">
         <h1>Get in Touch</h1>
+
         <div class="social-media">
-            <a href="mailto:lexa9448@gmail.com" title="Email">
-                📧
-            </a>
-            <a href="https://www.linkedin.com/in/alex-njiru" title="LinkedIn">
-                🔗
-            </a>
+            <a href="mailto:lexa9448@gmail.com" title="Email">📧</a>
+            <a href="https://www.linkedin.com/in/alex-njiru" title="LinkedIn">🔗</a>
         </div>
+
         <form id="contact-form">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
@@ -121,23 +165,18 @@
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Get form data
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
-            // Create a mailto link
+
             const mailtoLink = `mailto:lexa9448@gmail.com?subject=Message%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
-            
-            // Open the mailto link
+
             window.location.href = mailtoLink;
 
-            // Show success popup
             successPopup.classList.add('show');
             setTimeout(() => successPopup.classList.remove('show'), 3000);
 
-            // Reset form fields
             form.reset();
         });
     </script>
