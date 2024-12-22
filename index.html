@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Njiru - Portfolio</title>
+    <title>Alex Njiru Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,37 +14,23 @@
         }
 
         header {
-            text-align: left;
-            padding: 2rem;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .container {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
+            padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
         }
 
         .content {
             flex: 1;
             padding-right: 2rem;
+            min-width: 300px;
         }
 
-        .content h2 {
-            font-size: 2.5rem;
+        .content h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
@@ -71,12 +57,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            min-width: 300px;
         }
 
         .photo img {
             border-radius: 10px;
             width: 100%;
             max-width: 400px;
+            height: auto;
         }
 
         footer {
@@ -94,28 +82,42 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .photo {
+                margin-top: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="content">
-                <h1>About Me</h1>
-                <p>Hello! My name is Alex Muthomi Njiru, and I am a tech enthusiast with a diverse set of skills and experiences. My passion for technology and continuous learning has driven me to explore various fields, from cybersecurity to artificial intelligence, data analysis, and software development.</p>
-                <p>I hold certifications in Data Analysis with Python, Junior Cybersecurity Analysis, and AI Augmented Professional Development Skills. With a strong foundation in programming (Python and C), network troubleshooting, and system configurations, I bring technical expertise and problem-solving skills to every project I undertake.</p>
-                <p>In addition to my technical skills, I have hands-on experience teaching computer packages, configuring and maintaining networks, and assisting with digital operations. My journey has been a mix of academic learning, self-development, and professional practice, which has allowed me to work on real-world projects while staying updated with the latest technological advancements.</p>
-                <p>Currently, I am passionate about helping individuals and businesses leverage technology to solve challenges and optimize performance. Whether it's crafting insightful data visualizations, securing digital systems, or exploring innovative AI solutions, I strive to deliver impactful results.</p>
-                <a href="#">Get in Touch</a>
-                <a href="#">Qualifications</a>
-                <a href="#">Projects</a>
-            </div>
-            <div class="photo">
-                <img src="profile.png" alt="Alex Njiru">
-            </div>
+        <div class="content">
+            <h1>Alex Njiru</h1>
+            <p>Hello! My name is Alex Muthomi Njiru, and I am a tech enthusiast with a diverse set of skills and experiences. My passion for technology and continuous learning has driven me to explore various fields, from cybersecurity to artificial intelligence, data analysis, and software development.</p>
+            <p>I hold certifications in Data Analysis with Python, Junior Cybersecurity Analysis, and AI Augmented Professional Development Skills. With a strong foundation in programming (Python and C), network troubleshooting, and system configurations, I bring technical expertise and problem-solving skills to every project I undertake.</p>
+            <p>In addition to my technical skills, I have hands-on experience teaching computer packages, configuring and maintaining networks, and assisting with digital operations. My journey has been a mix of academic learning, self-development, and professional practice, which has allowed me to work on real-world projects while staying updated with the latest technological advancements.</p>
+            <p>Currently, I am passionate about helping individuals and businesses leverage technology to solve challenges and optimize performance. Whether it’s crafting insightful data visualizations, securing digital systems, or exploring innovative AI solutions, I strive to deliver impactful results.</p>
+            <a href="#">Get in Touch</a>
+            <a href="#">Qualifications</a>
+            <a href="#">Projects</a>
+        </div>
+        <div class="photo">
+            <img src="profile.jpg" alt="Alex Njiru">
         </div>
     </header>
     <footer>
-        <p>&copy; 2024 Alex Njiru | Designer Alex Njiru</p>
+        <p>&copy; 2024 Alex Njiru | Designed with <a href="https://wordpress.com">WordPress</a></p>
     </footer>
 </body>
 </html>
